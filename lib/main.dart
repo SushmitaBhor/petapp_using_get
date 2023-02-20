@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:state_change/photo.dart';
 
 void main() {
   runApp(const MyApp());
@@ -184,6 +185,13 @@ class _SelectedCategoriesState extends State<SelectedCategories> {
                                   setState(() {
                                     isPressed = !isPressed;
                                   });
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              RadialExpansionDemo(
+                                                  image: cats[i].image,
+                                                  type: cats[i].type)));
                                 },
                                 child: ListTile(
                                   trailing: controller
