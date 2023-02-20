@@ -162,6 +162,10 @@ class _SelectedCategoriesState extends State<SelectedCategories> {
   @override
   Widget build(BuildContext context) {
     return Obx(() => Scaffold(
+          appBar: AppBar(
+            centerTitle: true,
+            title: Text(controller.selectedCategories[0].name),
+          ),
           body: ListView.builder(
               shrinkWrap: true,
               itemCount: controller.selectedCategories.length,
